@@ -1,0 +1,6 @@
+Trabajo de Prácticas de Sistemas Interactivos (2016) realizado por Jesús Rojas Ramos.
+Contenido:
+	-Directorio Radio: Directorio del proyecto en Java
+	-Radio.zip: Proyecto en Java en formato comprimido
+	-Directorio Recursos: Contiene el prototipo en Pencil con sus iconos necesarios y un storyboard
+	-Memoria.odt / Memoria.pdf: Memoria del trabajo.
