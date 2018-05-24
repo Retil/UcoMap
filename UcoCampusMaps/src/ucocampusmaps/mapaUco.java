@@ -12,7 +12,6 @@ import javax.swing.ImageIcon;
  * @author jesem
  */
 public class mapaUco extends javax.swing.JFrame {
-
     public Portada padre;
     //public Portada ventanaPortada=new Portada();
     /**
@@ -20,6 +19,7 @@ public class mapaUco extends javax.swing.JFrame {
      */
     public mapaUco() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -32,6 +32,7 @@ public class mapaUco extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         CharlesDarwin = new javax.swing.JLabel();
         GregorMendel = new javax.swing.JLabel();
         JoseCelestinoMutis = new javax.swing.JLabel();
@@ -43,44 +44,54 @@ public class mapaUco extends javax.swing.JFrame {
         HospitalVeterinario = new javax.swing.JLabel();
         LeonardoDaVinci = new javax.swing.JLabel();
         RamonYCajal = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
-        BackGround = new javax.swing.JLabel();
+        FotoMaps = new javax.swing.JLabel();
         Show = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/esp.jpg"))); // NOI18N
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(270, 0, 70, 60);
         jPanel1.add(CharlesDarwin);
-        CharlesDarwin.setBounds(370, 100, 50, 50);
+        CharlesDarwin.setBounds(160, 180, 50, 50);
         jPanel1.add(GregorMendel);
-        GregorMendel.setBounds(420, 200, 50, 50);
+        GregorMendel.setBounds(200, 280, 50, 50);
         jPanel1.add(JoseCelestinoMutis);
-        JoseCelestinoMutis.setBounds(480, 200, 50, 50);
+        JoseCelestinoMutis.setBounds(230, 270, 50, 50);
         jPanel1.add(AlbertEinstein);
-        AlbertEinstein.setBounds(420, 100, 50, 50);
+        AlbertEinstein.setBounds(200, 170, 50, 50);
         jPanel1.add(MarieCurie);
-        MarieCurie.setBounds(480, 100, 50, 50);
+        MarieCurie.setBounds(230, 180, 50, 50);
         jPanel1.add(SanidadAnimal);
-        SanidadAnimal.setBounds(270, 0, 50, 50);
+        SanidadAnimal.setBounds(120, 80, 50, 50);
         jPanel1.add(SeveroOchoa);
-        SeveroOchoa.setBounds(370, 200, 50, 50);
+        SeveroOchoa.setBounds(170, 270, 50, 50);
         jPanel1.add(AularioAverroes);
-        AularioAverroes.setBounds(250, 220, 50, 50);
+        AularioAverroes.setBounds(110, 280, 50, 50);
         jPanel1.add(HospitalVeterinario);
-        HospitalVeterinario.setBounds(340, 30, 50, 50);
+        HospitalVeterinario.setBounds(160, 100, 50, 50);
         jPanel1.add(LeonardoDaVinci);
-        LeonardoDaVinci.setBounds(90, 120, 50, 50);
+        LeonardoDaVinci.setBounds(30, 190, 50, 50);
         jPanel1.add(RamonYCajal);
-        RamonYCajal.setBounds(280, 80, 50, 50);
+        RamonYCajal.setBounds(130, 140, 50, 50);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mapa_interactivo.jpg"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 0, 250, 60);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alber Einstein", "Aulario Averroes", "José Celestino Mutis", "Charles Darwin", "Grego Mendel", "HOspital Veterinario E Santisteban", "Marie Curie", "Ramón y Cajal", "Sanidad Animal", "Severo Ochoa", "Leonardo Da Vinci" }));
         jPanel1.add(jComboBox2);
-        jComboBox2.setBounds(0, 330, 280, 20);
+        jComboBox2.setBounds(20, 420, 280, 20);
 
-        BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/campus.jpg"))); // NOI18N
-        jPanel1.add(BackGround);
-        BackGround.setBounds(0, 0, 900, 320);
+        FotoMaps.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/campus.jpg"))); // NOI18N
+        jPanel1.add(FotoMaps);
+        FotoMaps.setBounds(0, 80, 350, 320);
 
         Show.setText("Mostrar");
         Show.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -89,26 +100,30 @@ public class mapaUco extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Show);
-        Show.setBounds(390, 360, 230, 90);
+        Show.setBounds(140, 560, 200, 40);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha.png"))); // NOI18N
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                jLabel2MouseClicked(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(30, 390, 170, 60);
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(10, 560, 100, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 350, 610);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
         );
 
         pack();
@@ -209,10 +224,11 @@ public class mapaUco extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ShowMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        this.setVisible(false);
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:this.setVisible(false);
+       this.setVisible(false);
         padre.setVisible(true);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -232,8 +248,8 @@ public class mapaUco extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AlbertEinstein;
     private javax.swing.JLabel AularioAverroes;
-    private javax.swing.JLabel BackGround;
     private javax.swing.JLabel CharlesDarwin;
+    private javax.swing.JLabel FotoMaps;
     private javax.swing.JLabel GregorMendel;
     private javax.swing.JLabel HospitalVeterinario;
     private javax.swing.JLabel JoseCelestinoMutis;
@@ -243,8 +259,11 @@ public class mapaUco extends javax.swing.JFrame {
     private javax.swing.JLabel SanidadAnimal;
     private javax.swing.JLabel SeveroOchoa;
     private javax.swing.JButton Show;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

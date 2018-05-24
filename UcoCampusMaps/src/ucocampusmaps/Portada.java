@@ -5,6 +5,10 @@
  */
 package ucocampusmaps;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+import javax.swing.Icon;
+
 /**
  *
  * @author jesem
@@ -14,11 +18,15 @@ public class Portada extends javax.swing.JFrame {
     /**
      * Creates new form Portada
      */
+    
+    public static Locale locale;
+    public static ResourceBundle bundle;
     public mapaUco ventanaMapaUco=new mapaUco();
     public CitaSecretaria secretaria = new CitaSecretaria();
     public SecretariaNumero secretariaNumero = new SecretariaNumero();
     public Portada() {
         initComponents();   
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -30,72 +38,85 @@ public class Portada extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        AskRequest = new javax.swing.JButton();
-        Map = new javax.swing.JButton();
-        AppName = new javax.swing.JLabel();
-        Icon = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         ShowRequest = new javax.swing.JButton();
+        Icon = new javax.swing.JLabel();
+        Map = new javax.swing.JButton();
+        AskRequest = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        AskRequest.setText("Pedir Cita Secretaria");
-        AskRequest.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AskRequestMouseClicked(evt);
-            }
-        });
+        jPanel1.setLayout(null);
 
-        Map.setText("Mapa Uco");
-        Map.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MapMouseClicked(evt);
-            }
-        });
-
-        AppName.setText("Nombre Aplicaicon");
-
-        Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logounicordoba.svg.png"))); // NOI18N
-
-        ShowRequest.setText("Mostrar Cita");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("ucocampusmaps/Bundle"); // NOI18N
+        ShowRequest.setText(bundle.getString("Portada.ShowRequest.text")); // NOI18N
         ShowRequest.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ShowRequestMouseClicked(evt);
             }
         });
+        jPanel1.add(ShowRequest);
+        ShowRequest.setBounds(40, 440, 250, 40);
+
+        Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logounicordoba.svg.png"))); // NOI18N
+        jPanel1.add(Icon);
+        Icon.setBounds(90, 80, 150, 127);
+
+        Map.setText(bundle.getString("Portada.Map.text")); // NOI18N
+        Map.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MapMouseClicked(evt);
+            }
+        });
+        Map.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MapActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Map);
+        Map.setBounds(40, 280, 250, 40);
+
+        AskRequest.setText(bundle.getString("Portada.AskRequest.text")); // NOI18N
+        AskRequest.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AskRequestMouseClicked(evt);
+            }
+        });
+        jPanel1.add(AskRequest);
+        AskRequest.setBounds(40, 360, 250, 40);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/esp.jpg"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(270, 0, 70, 60);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cuadro_dialogoMP.jpg"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(-6, -6, 160, 50);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(-16, -6, 370, 600);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(AppName, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(AskRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Map, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(ShowRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Icon))
-                .addGap(42, 42, 42))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(AppName, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Icon, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AskRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ShowRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Map, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -126,6 +147,30 @@ public class Portada extends javax.swing.JFrame {
         this.setVisible(false);
         }
     }//GEN-LAST:event_ShowRequestMouseClicked
+
+    private void MapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MapActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MapActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        if(flag==0)
+        {
+            locale = new Locale("en", "GB");
+            bundle= ResourceBundle.getBundle("ucocampusmaps/Bundle_en_GB",locale);
+            cambiarIdioma();
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eng.jpg")));
+            flag=1;
+        }
+        else
+        {
+            locale = new Locale("es", "ES");
+            bundle= ResourceBundle.getBundle("ucocampusmaps/Bundle",locale);
+            cambiarIdioma();
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/esp.jpg")));
+            flag=0;
+        }
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     
     /**
@@ -164,11 +209,24 @@ public class Portada extends javax.swing.JFrame {
         });
     }
 
+    //0 -> ESP
+    //1 -> ENG
+    public static int flag=0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AppName;
     private javax.swing.JButton AskRequest;
     private javax.swing.JLabel Icon;
     private javax.swing.JButton Map;
     private javax.swing.JButton ShowRequest;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private void cambiarIdioma() {
+
+        Map.setText(bundle.getString("Portada.Map.text"));
+        AskRequest.setText(bundle.getString("Portada.AskRequest.text"));
+        ShowRequest.setText(bundle.getString("Portada.AskRequest.text"));
+    }
 }

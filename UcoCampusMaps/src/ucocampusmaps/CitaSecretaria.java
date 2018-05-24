@@ -5,18 +5,25 @@
  */
 package ucocampusmaps;
 
+import java.awt.Font;
+import java.util.Locale;
+import java.util.ResourceBundle;
+import static ucocampusmaps.Portada.bundle;
+import static ucocampusmaps.Portada.flag;
+
 /**
  *
  * @author jesem
  */
 public class CitaSecretaria extends javax.swing.JFrame {
-
     public Portada padre;
     /**
      * Creates new form CitaSecretaria
      */
     public CitaSecretaria() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        NumeroPedido.setFont(new Font("Serif", Font.PLAIN, 32));
     }
 
     /**
@@ -29,27 +36,56 @@ public class CitaSecretaria extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        PedirCita = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Politecnica = new javax.swing.JButton();
+        Ciencias = new javax.swing.JButton();
+        Veterinaria = new javax.swing.JButton();
+        Turismo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        NumeroPedido = new javax.swing.JLabel();
+        FondoNumero = new javax.swing.JLabel();
         BackGround = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
-        PedirCita.setText("Pedir Cita");
-        PedirCita.addMouseListener(new java.awt.event.MouseAdapter() {
+        Politecnica.setText("Politecnica");
+        Politecnica.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PedirCitaMouseClicked(evt);
+                PolitecnicaMouseClicked(evt);
             }
         });
-        jPanel1.add(PedirCita);
-        PedirCita.setBounds(50, 150, 140, 60);
+        jPanel1.add(Politecnica);
+        Politecnica.setBounds(100, 110, 140, 40);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Politecnica", "Ciencias", "Turismo", "Veterinaria" }));
-        jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(20, 40, 200, 20);
+        Ciencias.setText("Ciencias");
+        Ciencias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CienciasMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Ciencias);
+        Ciencias.setBounds(100, 190, 140, 40);
+
+        Veterinaria.setText("Veterinaria");
+        Veterinaria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VeterinariaMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Veterinaria);
+        Veterinaria.setBounds(100, 350, 140, 40);
+
+        Turismo.setText("Turismo");
+        Turismo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TurismoMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Turismo);
+        Turismo.setBounds(100, 270, 140, 40);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha.png"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -58,19 +94,36 @@ public class CitaSecretaria extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(50, 290, 130, 70);
+        jLabel2.setBounds(120, 500, 100, 70);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/esp.jpg"))); // NOI18N
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(270, 10, 70, 60);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pedir_cita.jpg"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(-6, -6, 260, 50);
+        jPanel1.add(NumeroPedido);
+        NumeroPedido.setBounds(120, 460, 80, 40);
+
+        FondoNumero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banda_numero.jpg"))); // NOI18N
+        FondoNumero.setText("b");
+        jPanel1.add(FondoNumero);
+        FondoNumero.setBounds(0, 450, 340, 50);
+
+        BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.png"))); // NOI18N
         jPanel1.add(BackGround);
-        BackGround.setBounds(0, 0, 250, 450);
+        BackGround.setBounds(0, 0, 340, 590);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
         );
 
         pack();
@@ -82,12 +135,37 @@ public class CitaSecretaria extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void PedirCitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PedirCitaMouseClicked
+    private void PolitecnicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PolitecnicaMouseClicked
         // TODO add your handling code here:
-        SecretariaNumero.facultad=jComboBox1.getSelectedItem().toString();
-        padre.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_PedirCitaMouseClicked
+        SecretariaNumero.facultad="Politecnica";
+        //adre.setVisible(true);
+        //this.setVisible(false);
+        NumeroPedido.setText("P242");
+    }//GEN-LAST:event_PolitecnicaMouseClicked
+
+    private void CienciasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CienciasMouseClicked
+        // TODO add your handling code here:
+        SecretariaNumero.facultad="Ciencias";
+       // padre.setVisible(true);
+        //this.setVisible(false);
+        NumeroPedido.setText("C242");
+    }//GEN-LAST:event_CienciasMouseClicked
+
+    private void VeterinariaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VeterinariaMouseClicked
+        // TODO add your handling code here:
+        SecretariaNumero.facultad="Veterinaria";
+       // padre.setVisible(true);
+        //this.setVisible(false);
+        NumeroPedido.setText("V242");
+    }//GEN-LAST:event_VeterinariaMouseClicked
+
+    private void TurismoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TurismoMouseClicked
+        // TODO add your handling code here:
+        SecretariaNumero.facultad="Turismo";
+        //padre.setVisible(true);
+        //this.setVisible(false);
+        NumeroPedido.setText("T242");
+    }//GEN-LAST:event_TurismoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -126,9 +204,18 @@ public class CitaSecretaria extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackGround;
-    private javax.swing.JButton PedirCita;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton Ciencias;
+    private javax.swing.JLabel FondoNumero;
+    private javax.swing.JLabel NumeroPedido;
+    private javax.swing.JButton Politecnica;
+    private javax.swing.JButton Turismo;
+    private javax.swing.JButton Veterinaria;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    
+
 }

@@ -5,12 +5,13 @@
  */
 package ucocampusmaps;
 
+import java.awt.Font;
+
 /**
  *
  * @author jesem
  */
 public class SecretariaNumero extends javax.swing.JFrame {
-
     /**
      * Creates new form SecretariaNumero
      */
@@ -22,115 +23,28 @@ public class SecretariaNumero extends javax.swing.JFrame {
     
     public SecretariaNumero() {
         initComponents();  
+        this.setLocationRelativeTo(null);
+        TuNumero.setFont(new Font("Serif", Font.PLAIN, 32));
         
     }
 
     public void Start()
     {
+
+        if("Politecnica".equals(facultad))
+             TuNumero.setText("P242");
+        if("Ciencias".equals(facultad))
+            TuNumero.setText("C242");
+        if("Veterinaria".equals(facultad))
+            TuNumero.setText("V242");
+        if("Turismo".equals(facultad))
+            TuNumero.setText("T242");
+
         
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1.png"))); // NOI18N
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(360, 210, 170, 150);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1.png"))); // NOI18N
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(610, 220, 170, 150);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/5.png"))); // NOI18N
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(880, 220, 170, 150);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1.png"))); // NOI18N
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(360, 0, 170, 150);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/4.png"))); // NOI18N
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(590, 0, 170, 150);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1.png"))); // NOI18N
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(870, 0, 170, 150);
-        jPanel1.add(LetraTuya);
-        LetraTuya.setBounds(130, 10, 190, 140);
-
-        jLabel9.setText("NUMERO ACTUAL");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(20, 300, 110, 50);
-
-        jLabel10.setText("TU NUMERO");
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(30, 110, 90, 14);
-        
-        
-        if ("Politecnica".equals(facultad))
-         {
-             LetraTuya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/P.png")));
-             LetraActual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/P.png")));
-         }
-         if ("Ciencias".equals(facultad))
-         {
-             LetraTuya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/C.png")));
-             LetraActual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/C.png")));
-         }
-
-         if ("Turismo".equals(facultad))
-         {
-             LetraTuya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T.png")));
-             LetraActual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/T.png")));
-         }
-
-         if ("Veterinaria".equals(facultad))
-         {
-             LetraTuya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/V.png")));
-             LetraActual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/V.png")));
-         }
+        FondoNumero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banda_numero.jpg"))); // NOI18N
+        FondoSecretaria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/showCita.png"))); // NOI18N
     }
-    
-    
-    public void Finish()
-    {
-         jLabel4.setIcon(null); // NOI18N
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(360, 210, 170, 150);
-
-        jLabel2.setIcon(null); // NOI18N
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(610, 220, 170, 150);
-
-        jLabel3.setIcon(null); // NOI18N
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(880, 220, 170, 150);
-
-        jLabel5.setIcon(null); // NOI18N
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(360, 0, 170, 150);
-
-        jLabel6.setIcon(null); // NOI18N
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(590, 0, 170, 150);
-
-        jLabel7.setIcon(null); // NOI18N
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(870, 0, 170, 150);
-        jPanel1.add(LetraTuya);
-        LetraTuya.setBounds(130, 10, 190, 140);
-
-        jLabel9.setText("");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(20, 300, 110, 50);
-
-        jLabel10.setText("");
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(30, 110, 90, 14);
-        
-        
        
-        LetraTuya.setIcon(null);
-        LetraActual.setIcon(null);
-         this.ShowCita.setVisible(false);
-         
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -141,92 +55,83 @@ public class SecretariaNumero extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        LetraActual = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        LetraTuya = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        ShowCita = new javax.swing.JButton();
+        BotonAtras = new javax.swing.JLabel();
+        MostrarCita = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        TuNumero = new javax.swing.JLabel();
+        FondoNumero = new javax.swing.JLabel();
+        FondoSecretaria = new javax.swing.JLabel();
+        BackGround = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
-        jPanel1.add(LetraActual);
-        LetraActual.setBounds(130, 220, 190, 140);
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(360, 210, 170, 150);
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(610, 220, 170, 150);
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(880, 220, 170, 150);
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(360, 0, 170, 150);
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(590, 0, 170, 150);
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(870, 0, 170, 150);
-        jPanel1.add(LetraTuya);
-        LetraTuya.setBounds(130, 10, 190, 140);
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(20, 300, 110, 50);
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(30, 110, 90, 0);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha.png"))); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        BotonAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha.png"))); // NOI18N
+        BotonAtras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                BotonAtrasMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 10, 120, 70);
+        jPanel1.add(BotonAtras);
+        BotonAtras.setBounds(250, 0, 140, 50);
 
-        ShowCita.setText("Mostrar Cita");
-        ShowCita.addMouseListener(new java.awt.event.MouseAdapter() {
+        MostrarCita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mostrar_cita.jpg"))); // NOI18N
+        jPanel1.add(MostrarCita);
+        MostrarCita.setBounds(0, 0, 250, 50);
+
+        jButton1.setText("Mostrar Cita");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ShowCitaMouseClicked(evt);
+                jButton1MouseClicked(evt);
             }
         });
-        jPanel1.add(ShowCita);
-        ShowCita.setBounds(440, 140, 250, 80);
+        jPanel1.add(jButton1);
+        jButton1.setBounds(80, 250, 190, 50);
+        jPanel1.add(TuNumero);
+        TuNumero.setBounds(110, 540, 100, 50);
+        jPanel1.add(FondoNumero);
+        FondoNumero.setBounds(0, 540, 340, 50);
+        jPanel1.add(FondoSecretaria);
+        FondoSecretaria.setBounds(0, 70, 350, 470);
+
+        BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.png"))); // NOI18N
+        jPanel1.add(BackGround);
+        BackGround.setBounds(0, 0, 340, 590);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1051, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        
-        
-        padre.setVisible(true);
-        this.setVisible(false);
-        Finish();
-        this.initComponents();
-    }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void ShowCitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowCitaMouseClicked
-        // TODO add your handling code here:
-        this.ShowCita.setVisible(false);
-       
-        
+        jButton1.setVisible(false);
         Start();
-    }//GEN-LAST:event_ShowCitaMouseClicked
+
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void BotonAtrasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonAtrasMouseClicked
+        // TODO add your handling code here:
+        
+        
+        FondoSecretaria.setIcon(null); 
+        TuNumero.setText(null);
+        FondoNumero.setIcon(null);
+        padre.setVisible(true);
+        initComponents();
+        TuNumero.setFont(new Font("Serif", Font.PLAIN, 32));
+        this.setVisible(false);
+    }//GEN-LAST:event_BotonAtrasMouseClicked
 
        
             
@@ -272,18 +177,16 @@ public class SecretariaNumero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LetraActual;
-    private javax.swing.JLabel LetraTuya;
-    private javax.swing.JButton ShowCita;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel BackGround;
+    private javax.swing.JLabel BotonAtras;
+    private javax.swing.JLabel FondoNumero;
+    private javax.swing.JLabel FondoSecretaria;
+    private javax.swing.JLabel MostrarCita;
+    private javax.swing.JLabel TuNumero;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+    
+    
+    
 }
