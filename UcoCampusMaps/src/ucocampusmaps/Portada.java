@@ -14,8 +14,11 @@ public class Portada extends javax.swing.JFrame {
     /**
      * Creates new form Portada
      */
+    public mapaUco ventanaMapaUco=new mapaUco();
+    public CitaSecretaria secretaria = new CitaSecretaria();
+    public SecretariaNumero secretariaNumero = new SecretariaNumero();
     public Portada() {
-        initComponents();
+        initComponents();   
     }
 
     /**
@@ -27,22 +30,104 @@ public class Portada extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        AskRequest = new javax.swing.JButton();
+        Map = new javax.swing.JButton();
+        AppName = new javax.swing.JLabel();
+        Icon = new javax.swing.JLabel();
+        ShowRequest = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        AskRequest.setText("Pedir Cita Secretaria");
+        AskRequest.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AskRequestMouseClicked(evt);
+            }
+        });
+
+        Map.setText("Mapa Uco");
+        Map.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MapMouseClicked(evt);
+            }
+        });
+
+        AppName.setText("Nombre Aplicaicon");
+
+        Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Logounicordoba.svg.png"))); // NOI18N
+
+        ShowRequest.setText("Mostrar Cita");
+        ShowRequest.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ShowRequestMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(AppName, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(AskRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Map, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(ShowRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Icon))
+                .addGap(42, 42, 42))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(AppName, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Icon, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AskRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ShowRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Map, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    private void AskRequestMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AskRequestMouseClicked
+        // TODO add your handling code here:
+        secretaria.setVisible(true);
+        secretaria.padre=this;
+        this.setVisible(false);
+        
+        
+    }//GEN-LAST:event_AskRequestMouseClicked
+
+    private void MapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MapMouseClicked
+        ventanaMapaUco.setVisible(true);
+        ventanaMapaUco.padre=this;
+        this.setVisible(false);
+    }//GEN-LAST:event_MapMouseClicked
+
+    private void ShowRequestMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShowRequestMouseClicked
+        // TODO add your handling code here:
+        if(SecretariaNumero.facultad!="null")
+        {
+            secretariaNumero.setVisible(true);
+        secretariaNumero.padre=this;
+        this.setVisible(false);
+        }
+    }//GEN-LAST:event_ShowRequestMouseClicked
+
+    
     /**
      * @param args the command line arguments
      */
@@ -74,10 +159,16 @@ public class Portada extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Portada().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AppName;
+    private javax.swing.JButton AskRequest;
+    private javax.swing.JLabel Icon;
+    private javax.swing.JButton Map;
+    private javax.swing.JButton ShowRequest;
     // End of variables declaration//GEN-END:variables
 }
